@@ -1,0 +1,18 @@
+.main-header {
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: scaleUp 3s ease-out 1;
+    background-color: #330033;
+    background-image: url("https://cdn.svgator.com/images/2022/06/use-svg-as-background-image-particle-strokes.svg");
+}
+
+@keyframes scaleUp {
+    from {
+        /* transform: scale(0); */
+        opacity: 0;
+    }
+
+    to {
+        /* transform: scale(1); */
+        opacity: 1;
+    }
+}

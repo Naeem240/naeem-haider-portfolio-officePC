@@ -1,0 +1,137 @@
+.logo-text {
+    background: rgb(255, 255, 255);
+    background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(243, 6, 243, 1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* color: rgb(243, 6, 243); */
+    /* color: linear-gradient(90deg, rgba(243, 6, 243, 1) 0%, rgba(0, 0, 0, 1) 100%); */
+}
+
+.menu-list li {
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: color 0.5s;
+    transition: background-color 0.5s;
+}
+.menu-list li a{
+    width: 100%;
+    display: block;    
+}
+
+.menu-list li:hover {
+    background-color: #260829;
+    /* background-color: #f306f3; */
+    /* color: #6503f7; */
+    color: #f306f3;
+
+}
+
+.sub-menu {
+    animation: slowDown1 0.3s ease-out;
+}
+
+.icon {
+    transition: 0.5s;
+}
+
+.dropdown:hover .icon {
+    transform: rotate(225deg);
+    background-color: #f306f3;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.dropdown:hover .sub-menu {
+    animation: slowDown 0.3s ease-out;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+
+.sub-menu-list:hover {
+    margin-left: 5px;
+    transition: 0.5s ease-out;
+}
+
+.sub-menu-list:hover .go-icon {
+    display: block;
+}
+
+@keyframes slowDown {
+
+    from {
+        transform: rotate(-100deg);
+        /* transform: translateY(-20px); */
+        scale: 0;
+    }
+
+    to {
+        transform: rotate(0deg);
+        /* transform: translateY(0); */
+        scale: 1;
+
+    }
+}
+
+@keyframes slowDown1 {
+
+    from {
+        transform: rotate(0deg);
+        /* transform: translateY(-10px); */
+        scale: 1;
+
+    }
+
+    to {
+        transform: rotate(-100deg);
+        /* transform: translateY(-50px); */
+        scale: 0;
+
+
+    }
+}
+
+.social-area a .social-icon {
+    transition: background-color 1s;
+}
+
+.social-area button {
+    transition: background-color 1s;
+    cursor: pointer;
+    background-color: #f306f3;
+}
+
+.social-area a:hover .social-icon {
+    background-color: #f306f3;
+}
+
+.social-area button:hover .social-icon {
+    background-color: white;
+}
+
+.social-area a:hover {
+    background-color: aliceblue;
+}
+
+.social-area button:hover {
+    background-color: black;
+}
+
+/* Side Panel For Big Screen */
+
+.side-panel-1 {
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: slideIn .4s ease-in-out
+}
+
+@keyframes slideIn {
+    from {
+        translate: 150vw 0;
+        /* opacity: 0; */
+    }
+
+    to {
+        translate: 100 100;
+        /* opacity: 1; */
+
+    }
+}
