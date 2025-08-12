@@ -126,9 +126,9 @@ export default function About() {
             variants={shouldReduceMotion ? undefined : container}
         >
             <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-center text-[#f306f3] border-b pb-4">About me:</h2>
-            <div className="mx-10 lg:mx-15 flex flex-col-reverse md:flex-row items-start md:items-center gap-8 justify-between">
+            <div className="mx-6 md:mx-10 lg:mx-15 flex flex-col-reverse md:flex-row items-start md:items-center gap-8 justify-between">
                 {/* Left: text */}
-                <motion.div className="w-full md:w-1/2" variants={shouldReduceMotion ? undefined : item}>
+                <motion.div className="text-justify w-full md:w-1/2" variants={shouldReduceMotion ? undefined : item}>
                     <h3 className="text-lg md:text-xl font-semibold mb-4">
                         Hi, I&apos;m <span className="text-[#f306f3]">{name}</span>
                         <span className="mx-2">•</span>
@@ -138,7 +138,7 @@ export default function About() {
                             <span className="text-sm">Front End Web Developer</span>
                         )}
                     </h3>
-
+                    <h3 className="font-bold text-xl mb-2">Learning Journey:</h3>
                     <motion.p className="text-base leading-7 mb-4" variants={shouldReduceMotion ? undefined : item}>
                         I started with curiosity — building small HTML/CSS pages and exploring what JavaScript could do. As I learned
                         React and Tailwind, I became interested in building full web applications, then expanded into the MERN stack with

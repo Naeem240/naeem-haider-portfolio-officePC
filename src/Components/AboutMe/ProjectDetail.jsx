@@ -116,7 +116,7 @@ export default function ProjectDetail({ id }) {
     return <p className="text-center text-red-500">Project not found.</p>;
 
   return (
-    <div className="w-full mx-auto p-6 bg-black px-10 lg:px-15 rounded-lg shadow-lg text-white space-y-6">
+    <div className="w-full mx-auto p-6 bg-black px-6 md:px-10 lg:px-15 rounded-lg shadow-lg text-white space-y-6">
       <h2 className="text-3xl text-center font-bold text-[#f306f3]">{detail.title}</h2>
 
       {/* Image Gallery */}

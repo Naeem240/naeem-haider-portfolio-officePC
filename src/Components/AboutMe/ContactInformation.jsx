@@ -39,7 +39,7 @@ export default function ContactInformation() {
         Contact Information
       </h2>
 
-      <div className="flex flex-col gap-6 mx-10 lg:mx-15">
+      <div className="flex flex-col gap-6 mx-6 md:mx-10 lg:mx-15">
         {contactDetails.map(({ label, value, href, icon: Icon }, i) => (
           <motion.a
             key={label}

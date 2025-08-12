@@ -43,7 +43,7 @@ export default function Skill() {
       </h2>
 
       <motion.div
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mx-10 lg:mx-15"
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mx-6 md:mx-10 lg:mx-15"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

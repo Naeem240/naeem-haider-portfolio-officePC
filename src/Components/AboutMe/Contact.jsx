@@ -57,7 +57,7 @@ export default function Contact() {
       </motion.h2>
 
       <motion.p
-        className="mx-10 lg:mx-15 mb-12 text-center text-gray-300 text-lg"
+        className="mx-6 md:mx-10 lg:mx-15 mb-12 text-center text-gray-300 text-lg"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.8 }}
@@ -76,7 +76,7 @@ export default function Contact() {
         </motion.div>
       )}
 
-      <form onSubmit={handleSubmit} noValidate className="mx-10 lg:mx-15 space-y-6">
+      <form onSubmit={handleSubmit} noValidate className="mx-6 md:mx-10 lg:mx-15 space-y-6">
         <motion.div custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={container}>
           <label htmlFor="name" className="block mb-2 font-semibold text-gray-200">
             Name:

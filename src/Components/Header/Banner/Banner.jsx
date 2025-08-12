@@ -3,7 +3,7 @@ import { TypeAnimation } from 'react-type-animation';
 
 const Banner = () => {
     return (
-        <div className='overflow-hidden flex justify-between items-center text-white mx-10 lg:mx-15 flex-col-reverse md:flex-row md:h-[90vh]'>
+        <div className='overflow-hidden flex justify-between items-center text-white mx-6 md:mx-10 lg:mx-15 flex-col-reverse md:flex-row md:h-[90vh]'>
             <div className='text-2xl md:text-3xl font-bold leading-12 md:leading-18 w-full md:w-1/2 text-center md:text-left'>
                 <h1>Hi... <br /> I am Naeem Haider, a <br />
                     <TypeAnimation

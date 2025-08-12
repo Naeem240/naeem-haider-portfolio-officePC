@@ -14,7 +14,7 @@ const Navbar = () => {
     })
     return (
         <nav className={`sticky top-0 ${scrollY ? 'bg-black' : 'bg-transparent'} transition-all duration-1000 z-[9999]`}>
-            <div className='py-2 font-bold mx-10 lg:mx-15 text-white flex justify-between items-center'>
+            <div className='py-2 font-bold mx-6 md:mx-10 lg:mx-15 text-white flex justify-between items-center'>
                 <Link to='/' onClick={()=>window.scrollTo(0,0)} className='flex items-end'>
                     <figure className='w-10'>
                         <img className='relative right-2' src="logo.png" alt="N" />

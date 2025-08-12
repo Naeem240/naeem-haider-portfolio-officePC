@@ -174,7 +174,7 @@ export default function ProjectsCarousel() {
 
 
       <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-center text-[#f306f3] border-b pb-4">Projects</h2>
-      <div className="mx-10 lg:mx-15">
+      <div className="mx-6 md:mx-10 lg:mx-15">
 
         <Swiper
           className="-z-10 mySwiper"
@@ -250,7 +250,7 @@ export default function ProjectsCarousel() {
                     })}
                   </motion.div>
 
-                  <div className="flex gap-3 mt-2">
+                  <div className="flex gap-1 md:gap-3 mt-2">
 
                     <motion.a
                       href={`/projects#${index + 1}`}
