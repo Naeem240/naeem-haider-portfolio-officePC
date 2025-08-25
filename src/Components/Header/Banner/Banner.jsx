@@ -1,5 +1,6 @@
 import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
+import { IoCodeDownload } from "react-icons/io5";
 
 const Banner = () => {
     return (
@@ -17,7 +18,11 @@ const Banner = () => {
                 <p className='text-lg font-normal mt-6'>
                     "I am a full-stack web developer with a passion for building robust and user-friendly applications. I specialize in React, Node.js, Tailwind, MUI, MongoDB and deliver efficient, scalable solutions."
                 </p>
-                <button className='cursor-pointer mt-12 text-2xl border py-2 px-4 rounded-lg text-black bg-[#f306f3] transition-all duration-1000 hover:bg-black hover:text-[#f306f3]'>Download CV</button>
+
+                <a href='https://drive.usercontent.google.com/download?id=1-Ub8ae4eDtne6BvHunTvQQy4bqC_JYXi&export=download&authuser=0' target='_blank' className='inline-flex items-center gap-2 cursor-pointer mt-12 text-2xl border py-2 px-4 rounded-lg text-black bg-[#f306f3] transition-all duration-1000 hover:bg-black hover:text-[#f306f3]'>
+                    <IoCodeDownload />
+                    Download CV
+                </a>
             </div>
             <div className='w-full md:w-1/2'>
                 <figure className='flex justify-center md:justify-end'>
