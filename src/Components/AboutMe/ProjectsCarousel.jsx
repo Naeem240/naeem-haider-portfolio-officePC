@@ -1,27 +1,58 @@
-// ProjectsCarousel.jsx
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt, FaReact, FaNodeJs } from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs, SiMongodb, SiExpress } from "react-icons/si";
+import {
+  FaGithub,
+  FaExternalLinkAlt,
+  FaReact,
+  FaNodeJs,
+  FaChevronLeft,
+  FaChevronRight,
+} from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiNextdotjs,
+  SiMongodb,
+  SiExpress,
+  SiFirebase,
+} from "react-icons/si";
 import { CgDetailsMore } from "react-icons/cg";
-import { Link } from "react-router";
+import { RiRobot2Line } from "react-icons/ri";
 
 const projects = [
+  {
+    title: "Career Ostad | AI Powered Job Matcher",
+    description:
+      "Unlock your career potential with AI-powered guidance. Explore opportunities, get smart advice, and grow your skills with Career Ostad.",
+    image: "https://i.ibb.co.com/TxN3ykyW/image.png",
+    live: "https://career-ostad.vercel.app/",
+    repo: "https://github.com/Naeem240/CareerOstad-AI-Job-Matching",
+    tech: [
+      { name: "Next.js", Icon: SiNextdotjs, color: "white" },
+      { name: "Node.js", Icon: FaNodeJs, color: "#68A063" },
+      { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
+      { name: "Express", Icon: SiExpress, color: "white" },
+      { name: "Gemini API", Icon: RiRobot2Line, color: "#FF6F61" },
+    ],
+  },
   {
     title: "Newsly",
     description:
       "A news aggregator web app with category filters and search. Focused on responsive layout and fast UX.",
-    image: "https://i.ibb.co.com/bMzcNr41/image.png",
+    image: "https://i.ibb.co.com/N6DpFrKh/image.png",
     live: "https://newsly-552bf.web.app",
     repo: "https://github.com/Naeem240/newsly-main",
     tech: [
-      { name: "React", Icon: FaReact },
-      { name: "Tailwind CSS", Icon: SiTailwindcss },
+      { name: "React", Icon: FaReact, color: "#61DAFB" },
+      { name: "Node.js", Icon: FaNodeJs, color: "#68A063" },
+      { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
+      { name: "Express", Icon: SiExpress, color: "#000000" },
+      { name: "Firebase", Icon: SiFirebase, color: "#FFCA28" },
+      { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#38B2AC" },
     ],
   },
   {
@@ -32,8 +63,12 @@ const projects = [
     live: "https://libri-sphere.web.app",
     repo: "https://github.com/Naeem240/libri-sphere",
     tech: [
-      { name: "Next.js", Icon: SiNextdotjs },
-      { name: "MongoDB", Icon: SiMongodb },
+      { name: "React", Icon: FaReact, color: "#61DAFB" },
+      { name: "Node.js", Icon: FaNodeJs, color: "#68A063" },
+      { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
+      { name: "Express", Icon: SiExpress, color: "#000000" },
+      { name: "Firebase", Icon: SiFirebase, color: "#FFCA28" },
+      { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#38B2AC" },
     ],
   },
   {
@@ -44,78 +79,21 @@ const projects = [
     live: "https://room-sync-5dd52.web.app",
     repo: "https://github.com/Naeem240/roomsync-main",
     tech: [
-      { name: "Node.js", Icon: FaNodeJs },
-      { name: "Express", Icon: SiExpress },
+      { name: "React", Icon: FaReact, color: "#61DAFB" },
+      { name: "Node.js", Icon: FaNodeJs, color: "#68A063" },
+      { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
+      { name: "Express", Icon: SiExpress, color: "#000000" },
+      { name: "Firebase", Icon: SiFirebase, color: "#FFCA28" },
+      { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#38B2AC" },
     ],
   },
 ];
 
 export default function ProjectsCarousel() {
-  // const reduce = useReducedMotion();
-  const [isActive, setIsActive] = useState(false); // mobile tap animation
-  const carouselRef = useRef(null);
-  const swiperRef = useRef(null); // keep a ref to the Swiper instance
+  const [isActive, setIsActive] = useState(false);
 
-  // const project = ["Project-1", "Project-2", "Project-3", "Project-4"];
+  const onceViewport = { once: true, amount: 0.3 };
 
-  useEffect(() => {
-    if (swiperRef.current) {
-      swiperRef.current.slideToLoop(0, 0); // Go to first slide on mount
-    }
-  }, []);
-
-  // Observe visibility and control swiper autoplay manually
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const swiper = swiperRef.current;
-          if (!swiper) return;
-
-          if (entry.isIntersecting) {
-            // Ensure autoplay params exist before starting
-            swiper.params.autoplay = {
-              delay: 7500,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            };
-
-            // Reset to the first slide when the carousel becomes visible.
-            // Use slideToLoop so it works correctly with loop mode.
-            try {
-              swiper.slideToLoop(0, 0); // jump to first slide without animation
-            } catch (e) {
-              // ignore if slideToLoop isn't available for some versions
-              try {
-                swiper.slideTo(0, 0);
-              } catch (err) {
-                console.log(err, e)
-              }
-            }
-
-            // Start autoplay (will only start if Autoplay module is present)
-            if (swiper.autoplay && typeof swiper.autoplay.start === "function") {
-              swiper.autoplay.start();
-            }
-          } else {
-            // Stop autoplay when it leaves viewport
-            if (swiper.autoplay && typeof swiper.autoplay.stop === "function") {
-              swiper.autoplay.stop();
-            }
-          }
-        });
-      },
-      { threshold: 0.25 }
-    );
-
-    if (carouselRef.current) observer.observe(carouselRef.current);
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
-  // --- Variants (unchanged) ---
   const titleVariant = {
     hidden: { opacity: 0, x: -80, rotate: -8 },
     visible: { opacity: 1, x: 0, rotate: 0, transition: { duration: 0.5, ease: "easeOut", delay: 0.2 } },
@@ -126,11 +104,7 @@ export default function ProjectsCarousel() {
     visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.7 } },
   };
 
-  const badgesContainer = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.15 } },
-  };
-
+  const badgesContainer = { hidden: {}, visible: { transition: { staggerChildren: 0.12 } } };
   const badgeItem = {
     hidden: { opacity: 0, y: 20, scale: 0.8, rotate: -8 },
     visible: {
@@ -138,78 +112,77 @@ export default function ProjectsCarousel() {
       y: 0,
       scale: 1,
       rotate: 0,
-      transition: { type: "spring", stiffness: 200, damping: 15, mass: 0.6, bounce: 0.7, delay: 1.2, duration: 0.8 },
+      transition: { type: "spring", stiffness: 200, damping: 15, mass: 0.6, bounce: 0.7, delay: 1, duration: 0.7 },
     },
   };
 
-  const buttonLeft = {
-    hidden: { opacity: 0, x: -40 },
-    visible: { opacity: 1, x: 0, transition: { delay: 1.8, duration: 0.6, ease: "easeOut" } },
-  };
-
-  const buttonMiddle = {
-    hidden: { opacity: 0, y: -40 },
-    visible: { opacity: 1, y: 0, transition: { delay: 1.8, duration: 0.6, ease: "easeOut" } },
-  };
-
-
-  const buttonRight = {
-    hidden: { opacity: 0, x: 40 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.6, delay: 1.5, ease: "easeOut" } },
-  };
+  const buttonLeft = { hidden: { opacity: 0, x: -40 }, visible: { opacity: 1, x: 0, transition: { delay: 1.6, duration: 0.5 } } };
+  const buttonRight = { hidden: { opacity: 0, x: 40 }, visible: { opacity: 1, x: 0, transition: { delay: 1.3, duration: 0.5 } } };
+  const buttonMiddle = { hidden: { opacity: 0, y: -40 }, visible: { opacity: 1, y: 0, transition: { delay: 1.6, duration: 0.5 } } };
 
   const imageReveal = {
     hidden: { opacity: 0, x: -80, rotateY: 18 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      rotateY: 0,
-      transition: { duration: 0.5, delay: 0.2, ease: "easeOut" },
-    },
+    visible: { opacity: 1, x: 0, rotateY: 0, transition: { duration: 0.5, delay: 0.2, ease: "easeOut" } },
   };
 
   return (
-    <section id="projects" className="py-20 relative z-0" ref={carouselRef}>
+    <section id="projects" className="py-20 relative z-0 backdrop-blur-sm backdrop-brightness-80">
+      <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-center text-[#f306f3] border-b pb-4">
+        Projects
+      </h2>
 
+      <div className="mx-6 md:mx-10 lg:mx-15 relative">
+        {/* Prev / Next buttons */}
+        <motion.button
+          aria-label="Previous project"
+          className="animate-pulse cursor-pointer custom-prev absolute -left-5 md:-left-12 top-[42.5%] md:top-1/2 -translate-y-1/2 z-50 bg-black/60 hover:bg-black/70 text-[#f306f3] border border-[#f306f3] p-2 md:p-3 rounded-full shadow-lg"
+          initial="hidden"
+          whileInView="visible"
+          viewport={onceViewport}
+          variants={buttonLeft}
+        >
+          <FaChevronLeft className="w-4 h-4 animate-pulse" />
+        </motion.button>
 
-
-      <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-center text-[#f306f3] border-b pb-4">Projects</h2>
-      <div className="mx-6 md:mx-10 lg:mx-15">
+        <motion.button
+          aria-label="Next project"
+          className="animate-pulse cursor-pointer custom-next absolute -right-5 md:-right-12 top-[42.5%] md:top-1/2 -translate-y-1/2 z-50 bg-black/60 hover:bg-black/70 text-[#f306f3] border border-[#f306f3] p-2 md:p-3 rounded-full shadow-lg"
+          initial="hidden"
+          whileInView="visible"
+          viewport={onceViewport}
+          variants={buttonRight}
+        >
+          <FaChevronRight className="w-4 h-4 animate-pulse" />
+        </motion.button>
 
         <Swiper
-          className="-z-10 mySwiper"
-          modules={[Autoplay, Navigation, Pagination]}
-          speed={2000}
-          spaceBetween={500}
-          slidesPerView={1}
+          className="mySwiper"
+          modules={[Navigation, Pagination]}
+          speed={800}
+          spaceBetween={24}
           loop
-          // IMPORTANT: keep autoplay disabled here; we will start/stop it via the Swiper instance
-          autoplay={false}
-          onSwiper={(swiper) => {
-            // keep the instance available in the ref for our observer
-            swiperRef.current = swiper;
-            // ensure it is not playing on mount
-            if (swiper.autoplay && typeof swiper.autoplay.stop === "function") swiper.autoplay.stop();
-          }}
+          navigation={{ nextEl: ".custom-next", prevEl: ".custom-prev" }}
           pagination={{
             el: ".custom-pagination",
             clickable: true,
-            renderBullet: function (index, className) {
-              return `<span class="${className}"></span>`;
-            },
+            renderBullet: (index, className) => `<span class="${className}"></span>`,
           }}
-
+          breakpoints={{
+            0: { slidesPerView: 1, spaceBetween: 12 },
+            768: { slidesPerView: 1, spaceBetween: 18 },
+            1024: { slidesPerView: 1, spaceBetween: 24 },
+            1280: { slidesPerView: 1, spaceBetween: 28 },
+          }}
         >
           {projects.map((p, index) => (
             <SwiperSlide key={p.title}>
               <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                {/* LEFT */}
+                {/* Project Info */}
                 <div className="md:w-1/2 w-full">
                   <motion.h3
-
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: false, amount: 0.3 }}
+                    viewport={onceViewport}
                     variants={titleVariant}
                     className="text-2xl md:text-3xl font-bold mb-3 text-gray-100"
                   >
@@ -220,7 +193,7 @@ export default function ProjectsCarousel() {
                     className="text-base text-gray-300 mb-4"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: false, amount: 0.3 }}
+                    viewport={onceViewport}
                     variants={descVariant}
                   >
                     {p.description}
@@ -230,7 +203,7 @@ export default function ProjectsCarousel() {
                     className="flex flex-wrap gap-3 mb-4"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: false, amount: 0.45 }}
+                    viewport={onceViewport}
                     variants={badgesContainer}
                   >
                     {p.tech.map((t) => {
@@ -241,9 +214,7 @@ export default function ProjectsCarousel() {
                           className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-200 text-sm text-gray-50"
                           variants={badgeItem}
                         >
-                          <motion.span initial={{ rotate: -20 }} animate={{ rotate: 0 }} transition={{ type: "spring", stiffness: 300, damping: 8 }}>
-                            <Icon className="w-4 h-4" />
-                          </motion.span>
+                          <Icon className="w-4 h-4" style={{ color: t.color }} />
                           <span>{t.name}</span>
                         </motion.span>
                       );
@@ -251,14 +222,12 @@ export default function ProjectsCarousel() {
                   </motion.div>
 
                   <div className="flex gap-1 md:gap-3 mt-2">
-
                     <motion.a
                       href={`/projects#${index + 1}`}
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-[#f306f3] text-[#f306f3] transition-colors duration-1000 hover:bg-[#f306f3] hover:text-black text-sm font-medium"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-[#f306f3] text-[#f306f3] hover:bg-[#f306f3] hover:text-black text-sm font-medium transition-colors duration-300"
                       initial="hidden"
                       whileInView="visible"
-                      viewport={{ once: false, amount: 0.3 }}
+                      viewport={onceViewport}
                       variants={buttonLeft}
                     >
                       <CgDetailsMore className="w-4 h-4" />
@@ -269,10 +238,10 @@ export default function ProjectsCarousel() {
                       href={p.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-[#f306f3] text-[#f306f3] transition-colors duration-1000 hover:bg-[#f306f3] hover:text-black text-sm font-medium"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-[#f306f3] text-[#f306f3] hover:bg-[#f306f3] hover:text-black text-sm font-medium transition-colors duration-300"
                       initial="hidden"
                       whileInView="visible"
-                      viewport={{ once: false, amount: 0.3 }}
+                      viewport={onceViewport}
                       variants={buttonMiddle}
                     >
                       <FaExternalLinkAlt className="w-4 h-4" />
@@ -283,10 +252,10 @@ export default function ProjectsCarousel() {
                       href={p.repo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-[#f306f3] text-[#f306f3] transition-colors duration-1000 hover:bg-[#f306f3] hover:text-black text-sm font-medium "
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-[#f306f3] text-[#f306f3] hover:bg-[#f306f3] hover:text-black text-sm font-medium transition-colors duration-300"
                       initial="hidden"
                       whileInView="visible"
-                      viewport={{ once: false, amount: 0.3 }}
+                      viewport={onceViewport}
                       variants={buttonRight}
                     >
                       <FaGithub className="w-4 h-4" />
@@ -295,28 +264,23 @@ export default function ProjectsCarousel() {
                   </div>
                 </div>
 
-                {/* RIGHT */}
+                {/* Project Image */}
                 <div className="md:w-1/2 w-full flex justify-center md:justify-end">
                   <motion.div
                     style={{ perspective: 1200 }}
-                    className="relative -z-100 rounded-xl w-full max-w-lg"
+                    className="relative rounded-xl w-full max-w-lg"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: false, amount: 0.35 }}
+                    viewport={onceViewport}
                     variants={imageReveal}
-                    whileHover="hover"
-                    onClick={() => setIsActive(!isActive)}
-                    animate={isActive ? "hover" : "initial"}
+                    whileHover={{ scale: 1.02 }}
+                    onClick={() => setIsActive((s) => !s)}
                   >
-
-
-                    {/* image */}
-                    <a href={p.live} target="_blank" rel="noopener noreferrer" className="relative -z-100 block rounded-lg overflow-hidden m-1 group">
+                    <a href={p.live} target="_blank" rel="noopener noreferrer" className="relative block rounded-lg overflow-hidden group">
                       <motion.img
                         src={p.image}
                         alt={`${p.title} screenshot`}
-                        className="w-full h-56 md:h-64 object-cover rounded-lg block transition-all duration-500 group-hover:scale-102 border-2 border-[#f306f3]"
-                        initial="initial"
+                        className="w-full h-56 md:h-64 object-cover rounded-lg border-2 border-[#f306f3] transition-transform duration-500 group-hover:scale-102"
                       />
                     </a>
                   </motion.div>
@@ -325,8 +289,9 @@ export default function ProjectsCarousel() {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="custom-pagination mt-6 flex gap-2"></div>
+
+        <div className="custom-pagination mt-6 flex gap-2" />
       </div>
-    </section >
+    </section>
   );
 }

@@ -8,6 +8,7 @@ const tabs = [
   { id: "1", label: "Project-1" },
   { id: "2", label: "Project-2" },
   { id: "3", label: "Project-3" },
+  { id: "4", label: "Project-4" },
 ];
 
 export default function Projects() {
@@ -93,7 +94,7 @@ export default function Projects() {
     <>
       <Navbar />
       <div
-        className="min-h-screen pt-6 bg-gradient-to-b from-gray-900 to-black text-white"
+        className="min-h-screen pt-6 bg-linear-to-b from-gray-900 to-black text-white"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >

@@ -2,6 +2,39 @@ import React, { useState } from "react";
 
 const projectDetails = {
   "1": {
+    "title": "Career Ostad | AI-Powered Job Matching Platform",
+    "description": [
+      "💼 Career Ostad — A modern job and recruitment platform designed to connect companies with the most suitable candidates efficiently.",
+      "The platform features three roles: Admin, Company, and Candidate, each with tailored dashboards to manage jobs, applications, and profiles effectively.",
+      "AI-powered tools help match the perfect candidate to job listings or suggest ideal job opportunities for candidates based on their skills, experience, and preferences.",
+      "Candidates can build resumes, get AI-driven feedback on how strong their profiles are, and receive personalized career advice to improve employability.",
+      "Companies can post jobs, search for suitable candidates, and get AI suggestions to optimize their hiring decisions.",
+      "The interface is fully responsive, optimized for mobile, tablet, and desktop, providing a consistent experience across devices.",
+      "Security is ensured through Firebase Authentication and JWT tokens, protecting sensitive data and user interactions.",
+      "Key development challenges included integrating AI-driven matching and advice while maintaining seamless multi-role functionality, solved through modular design and efficient state management.",
+      "Future plans include adding real-time chat between candidates and companies, advanced analytics for hiring trends, and enhanced AI-driven career insights."
+    ],
+    "techStack": [
+      "Next.js",
+      "Next-Auth",
+      "Express",
+      "MongoDB",
+      "Gemini AI API",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+    "liveUrl": "https://career-ostad.vercel.app/",
+    "repoUrl": "https://github.com/Naeem240/CareerOstad-AI-Job-Matching",
+    "challenges": "Integrating AI-driven candidate-job matching and personalized career advice while maintaining a smooth experience for multiple roles.",
+    "improvements": "Adding real-time messaging, deeper AI analytics for career guidance, and improved candidate-company matching algorithms.",
+    "images": [
+      "https://i.ibb.co.com/TxN3ykyW/image.png",
+      "https://i.ibb.co.com/tMfv6KjT/image.png",
+      "https://i.ibb.co.com/0jMhCPZ5/image.png",
+      "https://i.ibb.co.com/gbtJfnjr/image.png"
+    ]
+  },
+  "2": {
     title: "Newsly",
     description: [
       "📰 Newsly — Your Modern News Aggregator Platform designed to deliver the latest news in a seamless, user-friendly experience.",
@@ -31,14 +64,14 @@ const projectDetails = {
     improvements:
       "Adding push notifications, AI-driven content curation, and expanding mobile app support to increase user retention.",
     images: [
-      "https://i.ibb.co.com/Q3tmJ5GB/image.png",
+      "https://i.ibb.co.com/N6DpFrKh/image.png",
       "https://i.ibb.co.com/cXhgdJKR/image.png",
       "https://i.ibb.co.com/bgs39tcG/image.png",
       "https://i.ibb.co.com/twjV6Wx4/image.png",
       "https://i.ibb.co.com/RGy0j2Jh/image.png",
     ],
   },
-  "2": {
+  "3": {
     title: "LibriSphere",
     description: [
       "🌐 LibriSphere is a comprehensive and intuitive Library Management System designed to streamline book management and user experience.",
@@ -73,7 +106,7 @@ const projectDetails = {
       "https://i.ibb.co.com/kgYqZqnM/image.png",
     ],
   },
-  "3": {
+  "4": {
     title: "RoomSync",
     description: [
       "RoomSync is a specialized roommate matching platform catering primarily to male students and professionals.",
@@ -132,11 +165,10 @@ export default function ProjectDetail({ id }) {
             <button
               key={i}
               onClick={() => setMainImage(img)}
-              className={`w-20 h-12 rounded-md overflow-hidden border-2 ${
-                mainImage === img
-                  ? "border-[#f306f3]"
-                  : "border-transparent hover:border-[#f306f3]"
-              } transition-colors duration-300 flex-shrink-0`}
+              className={`w-20 h-12 rounded-md overflow-hidden border-2 ${mainImage === img
+                ? "border-[#f306f3]"
+                : "border-transparent hover:border-[#f306f3]"
+                } transition-colors duration-300 shrink-0`}
               aria-label={`View image ${i + 1}`}
             >
               <img
