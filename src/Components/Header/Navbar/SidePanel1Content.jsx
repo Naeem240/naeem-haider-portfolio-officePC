@@ -2,7 +2,7 @@ import React from 'react';
 import Dropdowns from './Dropdowns';
 import { Link } from 'react-router';
 import { CgClose } from 'react-icons/cg';
-import { FaFacebook, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { SiGmail } from 'react-icons/si';
 import { IoCodeDownload } from 'react-icons/io5';
 
@@ -23,7 +23,7 @@ const SidePanel1Content = ({ sideMenu, setSideMenu }) => {
                 <li onClick={() => setSideMenu(!sideMenu)}><a href="/#about" className=''>About</a></li>
                 <li onClick={() => setSideMenu(!sideMenu)}><a href="/#skill">Skill</a></li>
                 <Dropdowns sideMenu={sideMenu} setSideMenu={setSideMenu} />
-                <a href='https://drive.usercontent.google.com/download?id=1-Ub8ae4eDtne6BvHunTvQQy4bqC_JYXi&export=download&authuser=0' target='_blank' className='inline-flex items-center gap-2 cursor-pointer text-lg border py-1 px-4 rounded-lg text-black bg-[#f306f3] transition-all duration-1000 hover:bg-black hover:text-[#f306f3] mx-4 w-fit justify-center'>
+                <a href='https://drive.usercontent.google.com/download?id=1DFZINDJ0yB4e6PFMdYEx3HYw61Kh5zNy&export=download&authuser=0' className='inline-flex items-center gap-2 cursor-pointer text-lg border py-1 px-4 rounded-lg text-black bg-[#f306f3] transition-all duration-1000 hover:bg-black hover:text-[#f306f3] mx-4 w-fit justify-center'>
                     <IoCodeDownload />
                     Resume
                 </a>
@@ -32,8 +32,8 @@ const SidePanel1Content = ({ sideMenu, setSideMenu }) => {
                 <a className='p-1 rounded-sm border border-[#f306f3]' href="https://www.linkedin.com/in/md-naeem-haider/" target='_blank'>
                     <FaLinkedin className="text-[#0A66C2]" size={24} />
                 </a>
-                <a className='p-1 rounded-sm border border-[#f306f3]' href="https://www.facebook.com/naeemhaiderun" target='_blank'>
-                    <FaFacebook className="text-[#1877F2]" size={24} title="Facebook" />
+                <a className='p-1 rounded-sm border border-[#f306f3]' href="https://github.com/naeem240" target='_blank'>
+                    <FaGithub className="text-white hover:text-black" size={24} title="GitHub" />
                 </a>
                 <a className='p-1 rounded-sm border border-[#f306f3]' href="https://wa.me/8801576583605" target='_blank'>
                     <FaWhatsapp className="text-[#25D366]" size={24} title="WhatsApp" />
