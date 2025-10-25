@@ -40,7 +40,7 @@ export default function AboutMe() {
             </motion.h2>
 
             {/* 💬 Main Content */}
-            <div className="relative z-10 mx-6 md:mx-10 lg:mx-20 flex flex-col md:flex-row items-start gap-8">
+            <div className="relative z-10 mx-6 md:mx-10 lg:mx-15 flex flex-col md:flex-row items-start gap-8">
                 <motion.div
                     className="text-justify w-full"
                     variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}

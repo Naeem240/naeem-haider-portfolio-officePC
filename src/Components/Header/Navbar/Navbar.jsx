@@ -3,7 +3,7 @@ import Dropdowns from './Dropdowns';
 import './Navbar.css';
 import SidePanel1 from './SidePanel1';
 import { Link } from 'react-router';
-import { FaFacebook, FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { SiGmail } from "react-icons/si";
 import { IoCodeDownload } from 'react-icons/io5';
 const Navbar = () => {
@@ -14,7 +14,7 @@ const Navbar = () => {
         window.scrollY >= 10 ? setScrollY(true) : setScrollY(false);
     })
     return (
-        <nav className={`sticky border-b border-[#f306f3] top-0 ${scrollY ? 'backdrop-blur-sm backdrop-brightness-90' : 'backdrop-blur-sm backdrop-brightness-70'} transition-all duration-1000 z-[9999]`}>
+        <nav className={`sticky border-b border-[#f306f3] top-0 ${scrollY ? 'backdrop-blur-sm backdrop-brightness-90' : 'backdrop-blur-sm backdrop-brightness-70'} transition-all duration-1000 z-9999`}>
             <div className='py-2 font-bold mx-6 md:mx-10 lg:mx-15 text-white flex justify-between items-center'>
                 <Link to='/' onClick={() => window.scrollTo(0, 0)} className='flex items-end'>
                     <figure className='w-10'>
@@ -23,11 +23,10 @@ const Navbar = () => {
                     <figcaption className='-ml-3 text-xl logo-text'>aeem</figcaption>
                 </Link>
                 <div className='hidden lg:block'>
-                    <ul className='flex gap-1 menu-list text-lg'>
+                    <ul className='flex gap-1 menu-list text-md'>
                         <li onClick={() => window.scrollTo(0, 0)}><Link to='/'>Home</Link></li>
-                        <li><a href="/#about">About</a></li>
-                        <Dropdowns />
-                        <li><a href="/#skill">Skill</a></li>
+                        <li><a href="/#skill">Skills</a></li>
+                        <Dropdowns />                        
                     </ul>
                 </div>
                 <div className='hidden md:flex items-center gap-3 social-area'>

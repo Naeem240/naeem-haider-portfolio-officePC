@@ -80,7 +80,7 @@ export default function Skill() {
         <Cursor cursorStyle="|" />
       </h2>
 
-      <div className="space-y-16 mx-6 md:mx-10 lg:mx-20">
+      <div className="space-y-16 mx-6 md:mx-10 lg:mx-15">
         {Object.entries(skills).map(([category, skillList]) => (
           <div key={category}>
             <motion.h3

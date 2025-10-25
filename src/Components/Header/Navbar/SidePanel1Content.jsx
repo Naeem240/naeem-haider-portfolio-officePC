@@ -20,7 +20,6 @@ const SidePanel1Content = ({ sideMenu, setSideMenu }) => {
             </div>
             <ul className='border-b pb-4 -mx-4 flex flex-col gap-2 menu-list text-lg justify-center'>
                 <li onClick={() => { window.scrollTo(0, 0); setSideMenu(!sideMenu) }}><Link to='/'>Home</Link></li>
-                <li onClick={() => setSideMenu(!sideMenu)}><a href="/#about" className=''>About</a></li>
                 <li onClick={() => setSideMenu(!sideMenu)}><a href="/#skill">Skill</a></li>
                 <Dropdowns sideMenu={sideMenu} setSideMenu={setSideMenu} />
                 <a href='https://drive.usercontent.google.com/download?id=1DFZINDJ0yB4e6PFMdYEx3HYw61Kh5zNy&export=download&authuser=0' className='inline-flex items-center gap-2 cursor-pointer text-lg border py-1 px-4 rounded-lg text-black bg-[#f306f3] transition-all duration-1000 hover:bg-black hover:text-[#f306f3] mx-4 w-fit justify-center'>

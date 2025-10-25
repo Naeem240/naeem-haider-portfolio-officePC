@@ -1,6 +1,14 @@
 import React from 'react';
 const menus = [
     {
+        label: 'About',
+        items: [
+            { label: 'Introduction', href: '/#about' },
+            { label: 'Educations & Certifications', href: '/#education' },
+            { label: 'Experience', href: '/#experience' },
+        ]
+    },
+    {
         label: 'Projects',
         items: [
             { label: 'Projects', href: '/#projects' },
