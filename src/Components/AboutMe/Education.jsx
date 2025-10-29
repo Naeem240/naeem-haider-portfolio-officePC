@@ -27,7 +27,7 @@ const educationData = [
     year: "2024-2025",
     result: "Status: Completed",
     statusColor: "text-green-500",
-    icon: <MdEngineering className="text-blue-400 w-8 h-8" />,
+    icon: <img src="ph.PNG" className="text-blue-400 w-8 h-8" />,
     certificate: true,
   },
   {
@@ -36,7 +36,7 @@ const educationData = [
     year: "2025-Present",
     result: "Status: In Progress",
     statusColor: "text-yellow-500",
-    icon: <MdEngineering className="text-blue-400 w-8 h-8" />,
+    icon: <img src="ph.PNG" className="text-blue-400 w-8 h-8" />,
   },
 ];
 
@@ -53,7 +53,7 @@ export default function Education() {
   const [showModal, setShowModal] = useState(false);
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
-  const cardRefs = useRef([]); 
+  const cardRefs = useRef([]);
 
   return (
     <section
@@ -71,16 +71,15 @@ export default function Education() {
         Educations & Certifications
       </motion.h2>
 
-      <div className="relative flex flex-col items-center mx-6 md:mx-10 lg:mx-15 space-y-8 md:space-y-12">
+      <div className="relative flex flex-col items-center mx-6 md:mx-10 lg:mx-15 space-y-8 md:space-y-12">       
 
         {/* Education Cards */}
         {educationData.map((edu, i) => (
           <motion.div
             key={i}
             ref={(el) => (cardRefs.current[i] = el)}
-            className={`relative z-10 w-full max-w-2xl border-2 border-secondary bg-white/90 backdrop-blur rounded-xl shadow-lg p-6 flex flex-col md:flex-row items-center md:items-start gap-4 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white ${
-              i % 2 === 0 ? "md:self-start" : "md:self-end"
-            } ${i === 0 ? "mt-4" : ""} ${i === educationData.length - 1 ? "mb-4" : ""}`}
+            className={`relative z-10 w-full max-w-2xl border-2 border-secondary bg-white/90 backdrop-blur rounded-xl shadow-lg p-6 flex flex-col md:flex-row items-center md:items-start gap-4 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white ${i % 2 === 0 ? "md:self-start" : "md:self-end"
+              } ${i === 0 ? "mt-4" : ""} ${i === educationData.length - 1 ? "mb-4" : ""}`}
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"
@@ -89,32 +88,32 @@ export default function Education() {
             {/* Animated dot connector */}
             <motion.div
               className="absolute left-1/2 transform -translate-x-1/2 -top-3 w-6 h-6 rounded-full bg-linear-to-r from-purple-600 to-pink-500 border-2 border-white shadow-[0_0_15px_rgba(236,72,153,0.6)] z-20 md:left-1/2 md:transform-none"
-              animate={{ 
+              animate={{
                 scale: [1, 1.2, 1],
                 boxShadow: [
                   "0 0 15px rgba(236,72,153,0.6)",
-                  "0 0 25px rgba(236,72,153,0.8)", 
+                  "0 0 25px rgba(236,72,153,0.8)",
                   "0 0 15px rgba(236,72,153,0.6)"
                 ]
               }}
-              transition={{ 
-                repeat: Infinity, 
-                duration: 2, 
-                ease: "easeInOut" 
+              transition={{
+                repeat: Infinity,
+                duration: 2,
+                ease: "easeInOut"
               }}
             />
-            
+
             <div className="shrink-0 p-3 bg-white rounded-full shadow-md border border-gray-200">
               {edu.icon}
             </div>
-            
+
             <div className="text-center md:text-left flex-1">
               <h3 className="text-xl font-bold text-gray-900 mb-1">{edu.degree}</h3>
               <p className="text-gray-700 font-medium mb-2">{edu.institution}</p>
               <p className={`text-sm font-semibold mt-1 ${edu.statusColor}`}>
                 {edu.year} • {edu.result}
               </p>
-              
+
               {edu.certificate && (
                 <button
                   onClick={() => setShowModal(true)}
@@ -130,13 +129,13 @@ export default function Education() {
 
       {/* Certificate Modal */}
       {showModal && (
-        <motion.div 
+        <motion.div
           className="fixed inset-0 flex items-center justify-center bg-black/70 backdrop-blur-sm z-50 p-4 h-screen m-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          <motion.div 
+          <motion.div
             className="relative bg-white rounded-2xl shadow-2xl p-4 md:p-6 max-w-3xl w-full max-h-[90vh] overflow-auto"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
