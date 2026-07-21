@@ -59,7 +59,7 @@ export default function Education() {
     <section
       id="education"
       ref={sectionRef}
-      className="py-20 backdrop-blur-sm backdrop-brightness-90 relative min-h-screen"
+      className="py-20 backdrop-blur-sm backdrop-brightness-90 relative "
     >
       <motion.h2
         className="text-3xl md:text-4xl font-extrabold mb-12 text-center text-[#f306f3] border-b pb-4 "
@@ -71,7 +71,7 @@ export default function Education() {
         Educations & Certifications
       </motion.h2>
 
-      <div className="relative flex flex-col items-center mx-6 md:mx-10 lg:mx-15 space-y-8 md:space-y-12">
+      <div className="relative flex flex-col items-center px-6 md:px-10 lg:px-15 max-w-[1600px] mx-auto space-y-8 md:space-y-12">
 
         {/* Education Cards */}
         {educationData.map((edu, i) => (

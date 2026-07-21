@@ -8,7 +8,7 @@ const Banner = () => {
     return (
         <section className="banner backdrop-blur-sm backdrop-brightness-90">
             <FloatingIcons/>
-            <div className='overflow-hidden flex justify-between items-center text-white mx-6 md:mx-10 lg:mx-15 flex-col-reverse md:flex-row md:h-[90vh]'>
+            <div className='overflow-hidden flex justify-between items-center text-white px-6 md:px-10 lg:px-15 max-w-[1600px] mx-auto flex-col-reverse md:flex-row '>
                 {/* === Left Side === */}
                 <div className='text-2xl md:text-3xl font-bold leading-12 md:leading-18 w-full md:w-1/2 text-center md:text-left'>
                     <h1>
@@ -35,8 +35,8 @@ const Banner = () => {
                     </p>
 
                     {/* === Animated Download Button === */}
-                    <motion.a
-                        href='https://drive.usercontent.google.com/download?id=1DFZINDJ0yB4e6PFMdYEx3HYw61Kh5zNy&export=download&authuser=0'
+                    <motion.a target='_blank'
+                        href='https://drive.google.com/file/d/1sYJ4u1gmEw7Sj5VV_bzWYEQjZSsrxZvU/view'
                         className='animate-bounce inline-flex items-center gap-2 cursor-pointer mt-12 text-2xl border py-2 px-4 rounded-lg text-black bg-[#f306f3] transition-all duration-1000 hover:bg-black hover:text-[#f306f3]'
                         animate={{
                             scale: [1, 1.05, 1, 1, 1.08, 1],

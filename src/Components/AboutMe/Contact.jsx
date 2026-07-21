@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useForm, ValidationError } from '@formspree/react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [state, handleSubmit] = useForm("xgogyjnn");
 
   // Handle input changes
   const handleChange = (e) => {
@@ -21,19 +23,19 @@ export default function Contact() {
     return errors;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const errors = validate();
-    setErrors(errors);
-    if (Object.keys(errors).length === 0) {
-      // For now, just simulate submission
-      setSubmitted(true);
-      setFormData({ name: "", email: "", message: "" });
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const errors = validate();
+  //   setErrors(errors);
+  //   if (Object.keys(errors).length === 0) {
+  //     // For now, just simulate submission
+  //     setSubmitted(true);
+  //     setFormData({ name: "", email: "", message: "" });
 
-      // Hide success after 5 seconds
-      setTimeout(() => setSubmitted(false), 5000);
-    }
-  };
+  //     // Hide success after 5 seconds
+  //     setTimeout(() => setSubmitted(false), 5000);
+  //   }
+  // };
 
   // Animation variants
   const container = {
@@ -46,7 +48,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-20 backdrop-blur-sm backdrop-brightness-90">
       <motion.h2
         className="text-3xl md:text-4xl font-extrabold mb-6 text-center text-[#f306f3] border-b pb-4"
         initial={{ opacity: 0, y: -40 }}
@@ -65,7 +67,7 @@ export default function Contact() {
         Have a project in mind or just want to say hi? I'd love to hear from you!
       </motion.p>
 
-      {submitted && (
+      {state.succeeded && (
         <motion.div
           className=" mb-8 p-4 bg-green-100 text-green-800 rounded shadow-sm text-center font-medium"
           initial={{ opacity: 0, scale: 0.9 }}
@@ -76,20 +78,16 @@ export default function Contact() {
         </motion.div>
       )}
 
-      <form onSubmit={handleSubmit} noValidate className="mx-6 md:mx-10 lg:mx-15 space-y-6">
-        <motion.div custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={container}>
-          <label htmlFor="name" className="block mb-2 font-semibold text-gray-200">
-            Name:
-          </label>
+      <form onSubmit={handleSubmit} noValidate className="px-6 md:px-10 lg:px-15 px-6 md:px-10 lg:px-15 max-w-[1600px] mx-auto space-y-6">
+        <motion.div custom={2} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={container}>
           <input
             type="text"
             id="name"
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className={`placeholder-gray-400 w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#f306f3] transition ${
-              errors.name ? "border-red-500" : "border-gray-300"
-            }`}
+            className={`placeholder-gray-400 w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#f306f3] transition ${errors.name ? "border-red-500" : "border-gray-300"
+              }`}
             placeholder="Your full name"
           />
           {errors.name && <p className="text-red-600 mt-1 text-sm">{errors.name}</p>}
@@ -105,9 +103,8 @@ export default function Contact() {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className={`w-full px-4 py-3 border placeholder-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition ${
-              errors.email ? "border-red-500" : "border-gray-300"
-            }`}
+            className={`w-full px-4 py-3 border placeholder-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition ${errors.email ? "border-red-500" : "border-gray-300"
+              }`}
             placeholder="your.email@example.com"
           />
           {errors.email && <p className="text-red-600 mt-1 text-sm">{errors.email}</p>}
@@ -123,9 +120,8 @@ export default function Contact() {
             rows="5"
             value={formData.message}
             onChange={handleChange}
-            className={`w-full placeholder-gray-400 px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition resize-none ${
-              errors.message ? "border-red-500" : "border-gray-300"
-            }`}
+            className={`w-full placeholder-gray-400 px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition resize-none ${errors.message ? "border-red-500" : "border-gray-300"
+              }`}
             placeholder="Write your message here..."
           />
           {errors.message && <p className="text-red-600 mt-1 text-sm">{errors.message}</p>}

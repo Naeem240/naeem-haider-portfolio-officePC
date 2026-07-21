@@ -12,6 +12,7 @@ import {
   FaNodeJs,
   FaChevronLeft,
   FaChevronRight,
+  FaAws,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -19,11 +20,31 @@ import {
   SiMongodb,
   SiExpress,
   SiFirebase,
+  SiTypescript,
+  SiOpenai,
+  SiStripe,
 } from "react-icons/si";
 import { CgDetailsMore } from "react-icons/cg";
 import { RiRobot2Line } from "react-icons/ri";
 
 const projects = [
+  
+  {
+    title: "IELTS Pro | AI-Powered Preparation Platform",
+    description:
+      "Empower your exam prep with AI-driven IELTS mock and practice tests. Access personalized test allocations based on tailored premium subscription plans.",
+    image: "https://i.ibb.co.com/HpKMwxFF/Ielts.png", // Replace with your actual image host link
+    live: "https://ieltspro-pi.vercel.app/", // Replace with your actual live link
+    repo: "https://github.com/Naeem240/ielts-pro-v1", // Replace with your actual repository link
+    tech: [
+      { name: "Next.js", Icon: SiNextdotjs, color: "white" },
+      { name: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
+      { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
+      { name: "ChatGPT API", Icon: SiOpenai, color: "#10A37F" },
+      { name: "Stripe", Icon: SiStripe, color: "#635BFF" },
+      { name: "AWS", Icon: FaAws, color: "#FF9900" },
+    ],
+  },
   {
     title: "Career Ostad | AI Powered Job Matcher",
     description:
@@ -39,54 +60,54 @@ const projects = [
       { name: "Gemini API", Icon: RiRobot2Line, color: "#FF6F61" },
     ],
   },
-  {
-    title: "Newsly",
-    description:
-      "A news aggregator web app with category filters and search. Focused on responsive layout and fast UX.",
-    image: "https://i.ibb.co.com/N6DpFrKh/image.png",
-    live: "https://newsly-552bf.web.app",
-    repo: "https://github.com/Naeem240/newsly-main",
-    tech: [
-      { name: "React", Icon: FaReact, color: "#61DAFB" },
-      { name: "Node.js", Icon: FaNodeJs, color: "#68A063" },
-      { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
-      { name: "Express", Icon: SiExpress, color: "#000000" },
-      { name: "Firebase", Icon: SiFirebase, color: "#FFCA28" },
-      { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#38B2AC" },
-    ],
-  },
-  {
-    title: "Libri Sphere",
-    description:
-      "A small library/catalog app with book details, search and a clean UI for reading discovery.",
-    image: "https://i.ibb.co.com/xKFn6Y06/image.pngv",
-    live: "https://libri-sphere.web.app",
-    repo: "https://github.com/Naeem240/libri-sphere",
-    tech: [
-      { name: "React", Icon: FaReact, color: "#61DAFB" },
-      { name: "Node.js", Icon: FaNodeJs, color: "#68A063" },
-      { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
-      { name: "Express", Icon: SiExpress, color: "#000000" },
-      { name: "Firebase", Icon: SiFirebase, color: "#FFCA28" },
-      { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#38B2AC" },
-    ],
-  },
-  {
-    title: "Room Sync",
-    description:
-      "A room-sharing prototype demonstrating CRUD flows and a simple real-time feel (simulated).",
-    image: "https://i.ibb.co.com/vvgfzKxB/image.png",
-    live: "https://room-sync-5dd52.web.app",
-    repo: "https://github.com/Naeem240/roomsync-main",
-    tech: [
-      { name: "React", Icon: FaReact, color: "#61DAFB" },
-      { name: "Node.js", Icon: FaNodeJs, color: "#68A063" },
-      { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
-      { name: "Express", Icon: SiExpress, color: "#000000" },
-      { name: "Firebase", Icon: SiFirebase, color: "#FFCA28" },
-      { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#38B2AC" },
-    ],
-  },
+  // {
+  //   title: "Newsly",
+  //   description:
+  //     "A news aggregator web app with category filters and search. Focused on responsive layout and fast UX.",
+  //   image: "https://i.ibb.co.com/N6DpFrKh/image.png",
+  //   live: "https://newsly-552bf.web.app",
+  //   repo: "https://github.com/Naeem240/newsly-main",
+  //   tech: [
+  //     { name: "React", Icon: FaReact, color: "#61DAFB" },
+  //     { name: "Node.js", Icon: FaNodeJs, color: "#68A063" },
+  //     { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
+  //     { name: "Express", Icon: SiExpress, color: "#000000" },
+  //     { name: "Firebase", Icon: SiFirebase, color: "#FFCA28" },
+  //     { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#38B2AC" },
+  //   ],
+  // },
+  // {
+  //   title: "Libri Sphere",
+  //   description:
+  //     "A small library/catalog app with book details, search and a clean UI for reading discovery.",
+  //   image: "https://i.ibb.co.com/xKFn6Y06/image.pngv",
+  //   live: "https://libri-sphere.web.app",
+  //   repo: "https://github.com/Naeem240/libri-sphere",
+  //   tech: [
+  //     { name: "React", Icon: FaReact, color: "#61DAFB" },
+  //     { name: "Node.js", Icon: FaNodeJs, color: "#68A063" },
+  //     { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
+  //     { name: "Express", Icon: SiExpress, color: "#000000" },
+  //     { name: "Firebase", Icon: SiFirebase, color: "#FFCA28" },
+  //     { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#38B2AC" },
+  //   ],
+  // },
+  // {
+  //   title: "Room Sync",
+  //   description:
+  //     "A room-sharing prototype demonstrating CRUD flows and a simple real-time feel (simulated).",
+  //   image: "https://i.ibb.co.com/vvgfzKxB/image.png",
+  //   live: "https://room-sync-5dd52.web.app",
+  //   repo: "https://github.com/Naeem240/roomsync-main",
+  //   tech: [
+  //     { name: "React", Icon: FaReact, color: "#61DAFB" },
+  //     { name: "Node.js", Icon: FaNodeJs, color: "#68A063" },
+  //     { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
+  //     { name: "Express", Icon: SiExpress, color: "#000000" },
+  //     { name: "Firebase", Icon: SiFirebase, color: "#FFCA28" },
+  //     { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#38B2AC" },
+  //   ],
+  // },
 ];
 
 export default function ProjectsCarousel() {
@@ -131,11 +152,11 @@ export default function ProjectsCarousel() {
         Projects
       </h2>
 
-      <div className="mx-6 md:mx-10 lg:mx-15 relative">
+      <div className="px-6 md:px-10 lg:px-15 max-w-[1600px] mx-auto relative">
         {/* Prev / Next buttons */}
         <motion.button
           aria-label="Previous project"
-          className="animate-pulse cursor-pointer custom-prev absolute -left-5 md:-left-12 top-[42.5%] md:top-1/2 -translate-y-1/2 z-50 bg-black/60 hover:bg-black/70 text-[#f306f3] border border-[#f306f3] p-2 md:p-3 rounded-full shadow-lg"
+          className="animate-pulse cursor-pointer custom-prev absolute -left-10 md:-left-25 top-[42.5%] md:top-1/2 -translate-y-1/2 z-50 bg-black/60 hover:bg-black/70 text-[#f306f3] border border-[#f306f3] p-2 md:p-3 rounded-full shadow-lg"
           initial="hidden"
           whileInView="visible"
           viewport={onceViewport}
@@ -146,7 +167,7 @@ export default function ProjectsCarousel() {
 
         <motion.button
           aria-label="Next project"
-          className="animate-pulse cursor-pointer custom-next absolute -right-5 md:-right-12 top-[42.5%] md:top-1/2 -translate-y-1/2 z-50 bg-black/60 hover:bg-black/70 text-[#f306f3] border border-[#f306f3] p-2 md:p-3 rounded-full shadow-lg"
+          className="animate-pulse cursor-pointer custom-next absolute -right-10 md:-right-25 top-[42.5%] md:top-1/2 -translate-y-1/2 z-50 bg-black/60 hover:bg-black/70 text-[#f306f3] border border-[#f306f3] p-2 md:p-3 rounded-full shadow-lg"
           initial="hidden"
           whileInView="visible"
           viewport={onceViewport}

@@ -9,6 +9,8 @@ import Skill from '../AboutMe/Skill';
 import Contact from '../AboutMe/Contact';
 import ContactInformation from '../AboutMe/ContactInformation';
 import Education from '../AboutMe/Education';
+import Footer from '../Footer';
+
 const Header = () => {
     // const [sideMenu, setSideMenu] = useState(false);
     return (
@@ -21,7 +23,8 @@ const Header = () => {
             <Skill/>
             <Education/>
             <ContactInformation/>
-            <Contact/>            
+            <Contact/>
+            <Footer />
         </header>
     );
 };

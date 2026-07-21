@@ -21,18 +21,21 @@ import {
   SiNginx,
   SiGo,
   SiShadcnui,
+  SiTypescript, 
 } from "react-icons/si";
 
 const skills = {
   "Front End": [
-    { name: "React", Icon: FaReact, color: "#61dafb" },
     { name: "Next.js", Icon: SiNextdotjs, color: "#000000" },
+    { name: "TypeScript", Icon: SiTypescript, color: "#3178c6" },
+    { name: "React.js", Icon: FaReact, color: "#61dafb" },
     { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#38b2ac" },
     { name: "ShadCN", Icon: SiShadcnui, color: "black" },
   ],
   "Back End": [
     { name: "Node.js", Icon: FaNodeJs, color: "#339933" },
     { name: "Express", Icon: SiExpress, color: "#000000" },
+    { name: "PostgreSQL", Icon: SiPostgresql, color: "#336791" },
     { name: "MongoDB", Icon: SiMongodb, color: "#47a248" },
     { name: "AI Integration", Icon: FaRobot, color: "#f59e0b" },
   ],
@@ -43,7 +46,6 @@ const skills = {
   ],
   "Upcoming Skills": [
     { name: "Golang", Icon: SiGo, color: "#00ADD8" },
-    { name: "PostgreSQL", Icon: SiPostgresql, color: "#336791" },
     { name: "Prisma", Icon: SiPrisma, color: "#2D3748" },
     { name: "Docker", Icon: FaDocker, color: "#2496ED" },
     { name: "Nginx", Icon: SiNginx, color: "#009639" },
@@ -80,7 +82,7 @@ export default function Skill() {
         <Cursor cursorStyle="|" />
       </h2>
 
-      <div className="space-y-16 mx-6 md:mx-10 lg:mx-15">
+      <div className="space-y-16 px-6 md:px-10 lg:px-15 max-w-[1600px] mx-auto">
         {Object.entries(skills).map(([category, skillList]) => (
           <div key={category}>
             <motion.h3

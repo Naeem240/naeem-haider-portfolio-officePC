@@ -15,7 +15,7 @@ const Navbar = () => {
     })
     return (
         <nav className={`sticky border-b border-[#f306f3] top-0 ${scrollY ? 'backdrop-blur-sm backdrop-brightness-90' : 'backdrop-blur-sm backdrop-brightness-70'} transition-all duration-1000 z-9999`}>
-            <div className='py-2 font-bold mx-6 md:mx-10 lg:mx-15 text-white flex justify-between items-center'>
+            <div className='py-2 font-bold text-white flex justify-between items-center px-6 md:px-10 lg:px-15 max-w-[1600px] mx-auto'>
                 <Link to='/' onClick={() => window.scrollTo(0, 0)} className='flex items-end'>
                     <figure className='w-10'>
                         <img className='relative right-2' src="logo.png" alt="N" />
@@ -42,7 +42,7 @@ const Navbar = () => {
                     <a className='p-1 rounded-sm border border-[#f306f3]' href="mailto:haidermdnaeem@gmail.com" target='_blank'>
                         <SiGmail className="text-[#D44638]" size={24} title="Gmail" />
                     </a>
-                    <a href='https://drive.usercontent.google.com/download?id=1DFZINDJ0yB4e6PFMdYEx3HYw61Kh5zNy&export=download&authuser=0' className='inline-flex items-center gap-2 cursor-pointer text-lg border py-1 px-4 rounded-lg text-black bg-[#f306f3] transition-all duration-1000 hover:bg-black hover:text-[#f306f3]'>
+                    <a href='https://drive.google.com/file/d/1sYJ4u1gmEw7Sj5VV_bzWYEQjZSsrxZvU/view' target='_blank'className='inline-flex items-center gap-2 cursor-pointer text-lg border py-1 px-4 rounded-lg text-black bg-[#f306f3] transition-all duration-1000 hover:bg-black hover:text-[#f306f3]'>
                         Resume
                         <IoCodeDownload className='animate-bounce' />
                     </a>

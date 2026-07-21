@@ -34,12 +34,12 @@ const itemVariants = {
 
 export default function ContactInformation() {
   return (
-    <section id="contact-info" className="py-20">
+    <section id="contact-info" className="py-20 backdrop-blur-sm backdrop-brightness-90">
       <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-center text-[#f306f3] border-b pb-4">
         Contact Information
       </h2>
 
-      <div className="flex flex-col gap-6 mx-6 md:mx-10 lg:mx-15">
+      <div className="flex flex-col gap-6 px-6 md:px-10 lg:px-15 max-w-[1600px] mx-auto">
         {contactDetails.map(({ label, value, href, icon: Icon }, i) => (
           <motion.a
             key={label}
