@@ -11,6 +11,7 @@ import ContactInformation from '../AboutMe/ContactInformation';
 import Education from '../AboutMe/Education';
 import Footer from '../Footer';
 
+import Experience from '../AboutMe/Experience';
 const Header = () => {
     // const [sideMenu, setSideMenu] = useState(false);
     return (
@@ -22,6 +23,7 @@ const Header = () => {
             <ProjectsCarousel/>
             <Skill/>
             <Education/>
+            <Experience/>
             <ContactInformation/>
             <Contact/>
             <Footer />
