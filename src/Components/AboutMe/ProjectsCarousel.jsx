@@ -156,7 +156,7 @@ export default function ProjectsCarousel() {
         {/* Prev / Next buttons */}
         <motion.button
           aria-label="Previous project"
-          className="animate-pulse cursor-pointer custom-prev absolute -left-10 md:-left-25 top-[42.5%] md:top-1/2 -translate-y-1/2 z-50 bg-black/60 hover:bg-black/70 text-[#f306f3] border border-[#f306f3] p-2 md:p-3 rounded-full shadow-lg"
+          className="animate-pulse cursor-pointer custom-prev absolute -left-10 md:-left-20 top-[42.5%] md:top-1/2 -translate-y-1/2 z-50 bg-black/60 hover:bg-black/70 text-[#f306f3] border border-[#f306f3] p-2 md:p-3 rounded-full shadow-lg hidden lg:block"
           initial="hidden"
           whileInView="visible"
           viewport={onceViewport}
@@ -167,7 +167,7 @@ export default function ProjectsCarousel() {
 
         <motion.button
           aria-label="Next project"
-          className="animate-pulse cursor-pointer custom-next absolute -right-10 md:-right-25 top-[42.5%] md:top-1/2 -translate-y-1/2 z-50 bg-black/60 hover:bg-black/70 text-[#f306f3] border border-[#f306f3] p-2 md:p-3 rounded-full shadow-lg"
+          className="animate-pulse cursor-pointer custom-next absolute -right-10 md:-right-20 top-[42.5%] md:top-1/2 -translate-y-1/2 z-50 bg-black/60 hover:bg-black/70 text-[#f306f3] border border-[#f306f3] p-2 md:p-3 rounded-full shadow-lg hidden lg:block"
           initial="hidden"
           whileInView="visible"
           viewport={onceViewport}
